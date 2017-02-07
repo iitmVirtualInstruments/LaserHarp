@@ -9,6 +9,7 @@
 
   
 #include <Stepper.h>
+
 int Laser=12;  // Base of the NPN transistor to control laser
 int LaserDelay=5;
 int counter=1;
@@ -27,7 +28,8 @@ const int stepsPerRevolution = 200;  // change this to fit the number of steps p
 // initialize the stepper library on pins 8 through 11:
 Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
 
-void setup() {
+void setup() 
+{
 pinMode(Laser,OUTPUT);    //Input for laser to turn only at defined position
 pinMode(A2,INPUT);       // Output from ldr to detect obstruction of beam 
 myStepper.setSpeed(200);  // set the speed at 200 rpm:
@@ -74,7 +76,8 @@ void detectfunc(int stp)
        
 }    
 
-void loop() {
+void loop() 
+{
 
  for(counter=0; counter<7; counter++)
   { //if (counter==1)
